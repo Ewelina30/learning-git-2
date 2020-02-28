@@ -1,0 +1,66 @@
+/*Global*/
+
+*, *::before, *::after {
+  box-sizing: border-box;
+ }
+
+body {
+  margin: 0;
+  line-height: 1.7;
+ }
+
+ .container {
+     max-width: 1140px;
+     padding: 0 20px;
+     padding: 0 20px;
+ }
+
+section {
+    padding-top: 110px;
+    padding-bottom: 110px;
+}
+
+/*Splash*/
+
+.splash {
+   height: 100vh;
+   position: relative;
+   background-image: url("https://images.pexels.com/photos/3309967/pexels-photo-3309967.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+   background-position: center center;
+   background-size: cover;
+   background-attachment: fixed;
+   text-align: center;
+}
+
+.splash-inner {
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Dancing Script';
+}
+
+.splash .page-title {
+  color: red;
+  font-size: 35px;
+}
+
+.splash .page-subtitle {
+    color: pink;
+    font-size: 25px;
+    border-top: 10px ridge yellow;
+    border-left: 10px ridge yellow;
+    border-right: 10px ridge yellow;
+    border-bottom: 10px ridge yellow;
+    border-radius: 15px;
+    box-shadow: inset 5px 5px 10px violet;
+    border-image-slice: 25% 30% 12% 20%
+}
+
+.splash-inner p {
+  text-align: center;
+  font-family: 'Indie Flower';
+  color: orange;
+  font-size: 16px;
+}
