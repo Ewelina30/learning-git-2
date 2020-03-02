@@ -1,0 +1,48 @@
+Komenda dla autoprefixer-cli (komenda ma ma czytaæ z pliku style.css i zapisywaæ wynik do pliku 
+autoprefixer-cli -o style.prefixed.css style.css
+
+Komenda dla html-validate ma wyœwietlaæ listê b³êdów we wszystkich plikach .html
+Do wyœwietlenia listy b³êdów we wszystkich plikaach .html pos³u¿y Protractor html-validate plugin
+Przyk³ad u¿ycia:
+In protractor.conf.js:
+
+{
+    plugins: [
+        /* load plugin */
+        {package: 'protractor-html-validate'}
+    ],
+ 
+    onPrepare: () => {
+        /* load jasmine helper */
+        require('protractor-html-validate/jasmine');
+    }
+}
+
+In specs:
+
+Each browser.get(..) and afterEach will trigger a validation.
+
+To manually verify use expect(browser.htmlvalidate()).toBeValid(), e.g.:
+
+it("should be valid", () => {
+  myPage.clickButton(); /* shows something */
+  expect(browser.htmlvalidate()).toBeValid();
+  myPage.clickAnotherButton(); /* hides something */
+});
+
+Configuration
+
+html-validate configuration can be passed in protractor.conf.js:
+
+{
+    plugins: [
+        {package: 'protractor-html-validate', config: {
+            plugins: [
+                'my-fancy-plugin',
+            ],
+            rules: {
+                'foo': 'error',
+            },
+        }}
+    ],
+}
